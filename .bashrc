@@ -35,7 +35,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 # use color xterm
-if [ -e /usr/share/terminfo/x/xterm-256color -o /lib/terminfo/x/xterm-256color ]; then                                                      
+if [ -f /usr/share/terminfo/x/xterm-256color -o -f /lib/terminfo/x/xterm-256color ]; then                                                      
      export TERM='xterm-256color'
 else
      export TERM='xterm-color'
